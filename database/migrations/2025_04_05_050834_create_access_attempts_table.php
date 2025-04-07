@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('access_attempts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('employee_id')->constrained('employees')->onDelete('cascade');
+            $table->boolean('success')->default(false);
             $table->timestamps();
         });
     }
