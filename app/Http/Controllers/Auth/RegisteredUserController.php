@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+
 use App\Models\AdminRoomUser;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -47,6 +47,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($admin);
 
-        return to_route('dashboard');
+        return to_route('employee.index');
     }
 }
